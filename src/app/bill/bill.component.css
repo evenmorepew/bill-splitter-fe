@@ -1,9 +1,10 @@
 /* BillsComponent's private CSS styles */
 .bills {
-  margin: 0 0 2em 0;
   list-style-type: none;
-  padding: 0;
-  width: 15em;
+}
+
+.bills ul {
+  left: 50%;
 }
 
 .bills li {
