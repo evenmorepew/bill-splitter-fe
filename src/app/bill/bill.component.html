@@ -1,19 +1,8 @@
-<h2>{{bill.name | uppercase}} Details</h2>
-
-<div><span>uuid: </span>{{bill.uuid}}</div>
-
-<div>
-  <label>name:
-    <input [(ngModel)]="bill.name" placeholder="name"/>
-  </label>
-</div>
-
 <h2>My Bills</h2>
 <ul class="bills">
-  <li *ngFor="let bill of bills" (click)="onSelect(bill)" [class.selected]="bill === selectedBill">
-    <span class="badge">{{bill.uuid}}</span> {{bill.name}}
+  <li *ngFor="let bill of bills">
+    <a routerLink="/detail/{{bill.uuid}}">
+      <span class="badge">{{bill.uuid}}</span> {{bill.name}}
+    </a>
   </li>
 </ul>
-
-<app-bill-detail [bill]="selectedBill"></app-bill-detail>
-

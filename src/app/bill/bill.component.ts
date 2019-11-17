@@ -9,11 +9,6 @@ import {BillService} from "../bill.service";
 })
 export class BillComponent implements OnInit {
 
-  bill: Bill = {
-    name: "Test",
-    uuid: "1234"
-  };
-
   bills: Bill[];
 
   constructor(private billService: BillService) {
@@ -26,12 +21,6 @@ export class BillComponent implements OnInit {
 
   ngOnInit() {
     this.getBills();
-  }
-
-  selectedBill: Bill;
-
-  onSelect(bill: Bill): void {
-    this.selectedBill = bill;
   }
 
 }

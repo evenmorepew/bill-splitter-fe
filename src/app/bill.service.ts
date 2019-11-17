@@ -13,7 +13,14 @@ export class BillService {
   }
 
   getBills(): Observable<Bill[]> {
+    // TODO: send the message _after_ fetching the hero
     this.messageService.add('BillService: fetched bills');
     return of(BILLS);
+  }
+
+  getBill(id: string): Observable<Bill> {
+    // TODO: send the message _after_ fetching the hero
+    this.messageService.add(`BillService: fetched hero id=${id}`);
+    return of(BILLS.find(bill => bill.uuid === id));
   }
 }

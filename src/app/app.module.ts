@@ -7,13 +7,15 @@ import {BillComponent} from './bill/bill.component';
 import {FormsModule} from '@angular/forms';
 import {BillDetailComponent} from './bill-detail/bill-detail.component';
 import {MessagesComponent} from './messages/messages.component';
+import {DashboardComponent} from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BillComponent,
     BillDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

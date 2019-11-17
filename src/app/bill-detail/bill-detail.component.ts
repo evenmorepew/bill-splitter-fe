@@ -1,5 +1,9 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Bill} from "../bill";
+import {ActivatedRoute} from '@angular/router';
+import {Location} from '@angular/common';
+
+import {BillService} from '../bill.service';
 
 @Component({
   selector: 'app-bill-detail',
@@ -8,12 +12,25 @@ import {Bill} from "../bill";
 })
 export class BillDetailComponent implements OnInit {
 
-  constructor() {
+  constructor(
+    private route: ActivatedRoute,
+    private billService: BillService,
+    private location: Location) {
   }
 
   ngOnInit() {
+    this.getBill();
   }
 
-  @Input() bill: Bill;
+  bill: Bill;
 
+  getBill(): void {
+    const id = this.route.snapshot.paramMap.get('id');
+    this.billService.getBill(id)
+      .subscribe(bill => this.bill = bill);
+  }
+
+  goBack(): void {
+    this.location.back();
+  }
 }

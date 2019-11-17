@@ -1,16 +1,14 @@
-/* BillsComponent's private CSS styles */
-.bills {
+/* HeroesComponent's private CSS styles */
+.heroes {
+  margin: 0 0 2em 0;
   list-style-type: none;
+  padding: 0;
+  width: 15em;
 }
 
-.bills ul {
-  left: 50%;
-}
-
-.bills li {
-  cursor: pointer;
+.heroes li {
   position: relative;
-  left: 0;
+  cursor: pointer;
   background-color: #EEE;
   margin: .5em;
   padding: .3em 0;
@@ -18,23 +16,25 @@
   border-radius: 4px;
 }
 
-.bills li:hover {
+.heroes li:hover {
   color: #607D8B;
   background-color: #DDD;
   left: .1em;
 }
 
-.bills li.selected {
-  background-color: #dc4d3c;
-  color: white;
+.heroes a {
+  color: #333;
+  text-decoration: none;
+  position: relative;
+  display: block;
+  width: 250px;
 }
 
-.bills li.selected:hover {
-  background-color: #BBD8DC;
-  color: white;
+.heroes a:hover {
+  color: #607D8B;
 }
 
-.bills .badge {
+.heroes .badge {
   display: inline-block;
   font-size: small;
   color: white;
@@ -45,6 +45,8 @@
   left: -1px;
   top: -4px;
   height: 1.8em;
+  min-width: 16px;
+  text-align: right;
   margin-right: .8em;
   border-radius: 4px 0 0 4px;
 }
