@@ -20,7 +20,8 @@ export class BillComponent implements OnInit {
   }
 
   getBills(): void {
-    this.bills = this.billService.getBills();
+    this.billService.getBills()
+      .subscribe(bills => this.bills = bills);
   }
 
   ngOnInit() {
