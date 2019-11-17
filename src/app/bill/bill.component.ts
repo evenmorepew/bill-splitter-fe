@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Bill} from "../bill";
-import {BILLS} from "../mock-bills";
+import {BillService} from "../bill.service";
 
 @Component({
   selector: 'app-bill',
@@ -14,12 +14,17 @@ export class BillComponent implements OnInit {
     uuid: "1234"
   };
 
-  bills = BILLS;
+  bills: Bill[];
 
-  constructor() {
+  constructor(private billService: BillService) {
+  }
+
+  getBills(): void {
+    this.bills = this.billService.getBills();
   }
 
   ngOnInit() {
+    this.getBills();
   }
 
   selectedBill: Bill;
