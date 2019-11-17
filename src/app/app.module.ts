@@ -6,12 +6,14 @@ import {AppComponent} from './app.component';
 import {BillComponent} from './bill/bill.component';
 import {FormsModule} from '@angular/forms';
 import {BillDetailComponent} from './bill-detail/bill-detail.component';
+import {MessagesComponent} from './messages/messages.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BillComponent,
-    BillDetailComponent
+    BillDetailComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
@@ -21,4 +23,5 @@ import {BillDetailComponent} from './bill-detail/bill-detail.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
