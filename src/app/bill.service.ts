@@ -25,7 +25,7 @@ export class BillService {
 
   addBill(billCreation: BillCreation): Observable<Bill> {
     this.log('add bill');
-    return this.http.put(this.billsUrl, billCreation, this.httpOptions).pipe(
+    return this.http.post(this.billsUrl, billCreation, this.httpOptions).pipe(
       tap(_ => this.log(`add bill name=${billCreation.name}`)),
       catchError(this.handleError<any>('add bill'))
     )
