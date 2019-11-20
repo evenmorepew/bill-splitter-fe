@@ -1,0 +1,21 @@
+<div>
+  <label>name:
+    <input [(ngModel)]="billCreation.name" placeholder="name"/>
+  </label>
+
+  <button (click)="addBill()">Add bill</button>
+</div>
+
+<div *ngIf="bill">
+
+  <h2>{{bill.name | uppercase}} Details</h2>
+  <div><span>uuid: </span>{{bill.uuid}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="bill.name" placeholder="name"/>
+    </label>
+  </div>
+
+</div>
+
+<button (click)="goBack()">go back</button>
